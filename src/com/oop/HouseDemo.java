@@ -19,5 +19,12 @@ public class HouseDemo {
             System.out.println("House 1 is bigger");
 
         System.out.println(house2.isBigger(5));
+
+        System.out.println("static everyWhere");
+        System.out.println(House.everyWhere);
+
+        house1.everyWhere++; // change in one object
+        System.out.println(house2.everyWhere); // print in another
+
     }
 }

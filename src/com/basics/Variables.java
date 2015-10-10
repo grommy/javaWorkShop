@@ -1,5 +1,7 @@
 package com.basics;
 
+import com.oop.House;
+
 public class Variables {
 
 	public static void main(String[] args) {
@@ -18,7 +20,9 @@ public class Variables {
 		
 		char a = 'a';
 		System.out.println(a);
-		
+
+		House house1 = new House();
+		System.out.println(house1.getBedRooms());  // access modifier test
 	}
 
 }

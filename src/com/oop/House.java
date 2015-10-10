@@ -4,8 +4,10 @@ public class House {
     private int bedRooms;
     protected String address = "Wall-street";
     String[] neighbourhood = {};
+    final int notMutable = 0;
+    static int everyWhere = 0;
 
-    House() {
+    public House() {
         System.out.println("==House creation==");
     }
 
@@ -15,6 +17,7 @@ public class House {
     }
 
     public int getBedRooms() {
+//        notMutable = 7;  // can't do this
         return bedRooms;
     }
 
