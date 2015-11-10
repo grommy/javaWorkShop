@@ -9,6 +9,8 @@ public class Nexus5 implements Smartphone{
         Smartphone nexus = new Nexus5();
         nexus.call();
         System.out.println(nexus.SCREEN_SIZE);
+        nexus.takePhoto();
+        nexus.installApp("Angry Birds");
     }
 
     @Override
@@ -23,6 +25,6 @@ public class Nexus5 implements Smartphone{
 
     @Override
     public void installApp(String name) {
-        System.out.println("Nexus installs App");
+        System.out.printf("Nexus installs %s \n ", name);
     }
 }
