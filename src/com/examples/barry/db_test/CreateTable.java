@@ -9,12 +9,7 @@ class CreateTable {
 
    public static void main(String args[]) {
 
-       final String DRIVER =
-               "com.mysql.jdbc.Driver";
-       final String CONNECTION =
-//         "jdbc:mysql://localhost:3306/test";
-               "jdbc:mysql://localhost:3306/AccountDatabase;create=true";
-
+//       As datasource:
 //       MysqlDataSource dataSource = new MysqlDataSource();
 //       dataSource.setUser("root");
 //       dataSource.setServerName("localhost");
@@ -24,6 +19,9 @@ class CreateTable {
 
        final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
        final String DB_URL = "jdbc:mysql://localhost/";
+
+//       final String CONNECTION =
+//               "jdbc:mysql://localhost:3306/AccountDatabase;create=true";
 
        //  Database credentials
        final String USER = "root";
@@ -70,16 +68,15 @@ class CreateTable {
            System.out.println("Creating table...");
            stmt = conn.createStatement();
 
-           sql = "create table ACCOUNTS                       "
-                   + "  (NAME VARCHAR(32) NOT NULL PRIMARY KEY, "
-                   + "   ADDRESS VARCHAR(32),                   "
-                   + "   BALANCE FLOAT)                         ";
+           sql = new StringBuilder().append("create table ACCOUNTS").append(
+                   "  (NAME VARCHAR(32) NOT NULL PRIMARY KEY, ").append(
+                   "   ADDRESS VARCHAR(32),                   ").append(
+                   "   BALANCE FLOAT)                         ").toString();
 
            stmt.executeUpdate(sql);
 
            stmt.executeUpdate(
-                   "insert into ACCOUNTS values                "
-                   + "  ('Barry Burd', '222 Cyber Lane', 24.02)");
+                   String.format("insert into ACCOUNTS values ('Barry Burd', '222 Cyber Lane', 24.02)"));
 
            stmt.executeUpdate(
                    "insert into ACCOUNTS values                 "
